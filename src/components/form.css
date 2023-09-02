@@ -1,0 +1,39 @@
+/* form.css */
+
+/* Style for the form container */
+.App {
+    border: 2px solid #ccc; /* Add your desired border style */
+    padding: 20px;
+    font-family: 'Quicksand', sans-serif; /* Add padding to create space between the border and form elements */
+}
+  
+  
+  /* Style for form labels */
+  .form-label {
+    font-weight: bold; /* Add styling to make labels bold, you can adjust as needed */
+  }
+  
+  /* Style for form inputs and textareas */
+  .form-control {
+    width: 100%; /* Make inputs and textareas 100% width of their container */
+    padding: 10px; /* Add padding for better spacing */
+    margin-bottom: 10px; /* Add margin to create space between inputs */
+  }
+  
+  /* Style for buttons */
+  .btn-primary {
+    background-color: #007bff; /* Customize button background color */
+    color: #fff; /* Customize button text color */
+    border: none; /* Remove button border */
+    padding: 10px 20px; /* Add padding to the button */
+    cursor: pointer; /* Add pointer cursor on hover */
+  }
+  
+  /* Style for required field indicator (red asterisk) */
+  .text-danger {
+    color: red;
+    margin-left: 5px; /* Add margin to separate the asterisk from the label */
+  }
+  
+  /* Additional styles for radio buttons and checkboxes if needed */
+  
