@@ -1,8 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const { PORT } = require("./config/serverConfig");
-const { sendBasicEmail } = require("./mailer");
 const generateStatement = require("./generateStatement");
+const sendSOP = require("./sendSOP");
 const app = express();
 
 app.use(express.json());
@@ -14,14 +14,9 @@ app.use(
     methods: "POST",
   })
 );
-const letterContent = generateStatement({});
+
+app.post("/api/sendSOP", sendSOP);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-  sendBasicEmail(
-    "sender",
-    "20r01a6740@cmritonline.ac.in",
-    "Testing mailing service",
-    letterContent
-  );
 });
