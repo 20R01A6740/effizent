@@ -1,18 +1,18 @@
 function generateStatement({
-  usernameLetter,
-  useremailLetter,
-  userdegreeLetter,
-  usercourseLetter,
-  usercollageLetter,
-  userOptedLetter,
-  useradmittedLetter,
+  fullName,
+  email,
+  highestEducationLevel,
+  fieldOfStudy,
+  instituteCompleted,
+  programInCanada,
+  instituteInCanada,
 }) {
   var letterContent = `
 From
 
-${usernameLetter}
+${fullName}
 
-${useremailLetter}
+${email}
 
 To
 
@@ -24,23 +24,23 @@ Subject: Statement of Purpose for studying in Canada
 
 Dear Sir/Madam,
 
-I would like to take this opportunity to introduce myself as ${usernameLetter}, a passionate
+I would like to take this opportunity to introduce myself as ${fullName}, a passionate
 
-individual with a strong interest in the field of ${usercourseLetter}. This passion
+individual with a strong interest in the field of ${fieldOfStudy}. This passion
 
-and love for technology have led me to pursue a Master's degree in ${userOptedLetter} from
+and love for technology have led me to pursue a Master's degree in ${programInCanada} from
 
-the ${useradmittedLetter} in Canada.
+the ${instituteInCanada} in Canada.
 
-I have recently completed my ${userdegreeLetter} in ${usercourseLetter} from ${usercollageLetter}, where I
+I have recently completed my ${highestEducationLevel} in ${fieldOfStudy} from ${instituteCompleted}, where I
 
-gained a solid foundation in programming languages, algorithms, and ${userOptedLetter}.
+gained a solid foundation in programming languages, algorithms, and ${programInCanada}.
 
 Throughout my undergraduate studies, I have consistently excelled in my coursework and
 
 demonstrated a strong aptitude for problem-solving and critical thinking.
 
-The program of study in ${userOptedLetter} at the ${useradmittedLetter} is highly regarded
+The program of study in ${programInCanada} at the ${instituteInCanada} is highly regarded
 
 and offers a comprehensive curriculum that aligns perfectly with my academic and career
 
@@ -96,7 +96,7 @@ and look forward to the possibility of studying in Canada.
 
 Sincerely,
 
-${usernameLetter}`;
+${fullName}`;
 
   return letterContent;
 }

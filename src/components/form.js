@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './form.css';
 
 export const Form = () => {
@@ -26,7 +27,6 @@ export const Form = () => {
         didGIC: 'No',
         gicAmountPaid: '',
     });
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -37,23 +37,29 @@ export const Form = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const response = await fetch('http://localhost:5000/api/submit-form', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
+        axios.post("/api/sendSOP", formData).then(function (response) {
+            console.log(response);
+        }).catch(function (error) {
+            console.log(error);
+        })
+        // try {
+        //     const response = await fetch('localhost:5000/api/sendSOP', {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json',
+        //         },
+        //         body: JSON.stringify(formData),
+        //     });
 
-            if (response.ok) {
-                console.log('Form submitted successfully');
-            } else {
-                console.error('Form submission failed');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        }
+        //     if (response.ok) {
+        //         console.log('Form submitted successfully');
+        //     } else {
+        //         console.error('Form submission failed');
+        //     }
+        // } catch (error) {
+        //     console.error('Error:', error);
+        // }
+       
     };
 
     return (
@@ -552,7 +558,7 @@ export const Form = () => {
                                 />
                             </div>
                         )}
-                        <button type="submit" className="btn btn-primary">
+                        <button type="submit" className="btn btn-primary" onClick={handleSubmit} >
                             Submit
                         </button>
                     </form>

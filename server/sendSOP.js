@@ -2,11 +2,12 @@ const { sendBasicEmail } = require("./mailer");
 const generateStatement = require("./generateStatement");
 
 function sendSOP(req, res) {
+  console.log(req.body);
   try {
-    const letterContent = generateStatement({});
+    const letterContent = generateStatement(req.body);
     sendBasicEmail(
       "sender",
-      "20r01a6720@cmritonline.ac.in",
+      req.body.email,
       "Testing mailing service",
       letterContent
     );
